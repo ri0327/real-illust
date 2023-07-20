@@ -57,8 +57,8 @@ const sendtoClarifai = (nFN) => {
         console.log("Predicted concepts, with confidence values:");
         for (let i = 0; i < response.outputs[0].data.concepts.length; i++) {
           const c = response.outputs[0].data.concepts[i];
-          console.log(c.name + ": " + c.value);
-          result[i] = c.name + ": " + c.value;
+          console.log(c.name + ": " + c.value.toFixed(4));
+          result[i] = c.name + ": " + c.value.toFixed(4);
         }
 
         resolve();
